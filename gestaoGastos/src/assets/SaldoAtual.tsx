@@ -1,6 +1,10 @@
 import { Transacao } from "./types"
 
-const SaldoAtual = ({transacoes}) => {
+interface SaldoAtualProps {
+    transacoes: Transacao{}
+}
+
+const SaldoAtual = ({transacoes}: SaldoAtualProps) => {
     const calcularSaldo = () => {
         return transacoes.reduce((saldo, transacao:Transacao) => {
             return transacao.tipo === "receita" ? saldo + transacao.valor : saldo - transacao.valor
