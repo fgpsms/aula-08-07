@@ -16,7 +16,7 @@ function App() {
     }
     else{
       const transacoesAtuais = transacoes.filter(t => t.id!== transacao.id)
-      setTransacoes(prevTransacoes => prevTransacoes.map((t:Transacao) =>(it.id === transacao.id ? transacao : t)))
+      setTransacoes(prevTransacoes => prevTransacoes.map((t:Transacao) =>(t.id === transacao.id ? transacao : t)))
     }
   }
  const editarTransacao = (transacao: Transacao) => setTransacaoEditando(transacao)
