@@ -44,39 +44,60 @@ export const FormularioTransacao = ({
       }));
     };
 
-  return;
-  <form onSubmit={handleSubmit}>
-    <div>
-      <label>Tipo:</label>
-      <select name="tipo" value={transacao.tipo} onChange={handleChange}>
-        <option value="receita">Receita</option>
-        <option value="despesa">Despesa</option>
-      </select>
-    </div>
-    <div>
-      <label>Descrição:</label>
-      <input
-        type="text"
-        name="descricao"
-        value={transacao.descricao}
-        onChange={handleChange}
-      />
-    </div>
-    <div>
-      <label>Valor:</label>
-      <input
-        type="number"
-        name="valor"
-        value={transacao.valor}
-        onChange={handleChange}
-        step="0.01"
-      />
-    </div>
-    <button type="submit">Salvar</button>
-    {transacaoAtual && (
-      <button type="button" onClick={cancelarEdicao}>
-        Cancelar
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white rounded-lg p-4 flex gap-2 flex-col"
+    >
+      <div className="flex flex-row gap-2 items-center">
+        <label>Tipo:</label>
+        <select
+          name="tipo"
+          value={transacao.tipo}
+          onChange={handleChange}
+          className="border-slate-300 rounded-sm p-1"
+        >
+          <option value="receita">Receita</option>
+          <option value="despesa">Despesa</option>
+        </select>
+      </div>
+      <div className="flex flex-row gap-2 items-center">
+        <label>Descrição:</label>
+        <input
+          type="text"
+          name="descricao"
+          value={transacao.descricao}
+          onChange={handleChange}
+          className="border-slate-300 rounded-sm p-1"
+        />
+      </div>
+      <div className="flex flex-row gap-2 items-center">
+        <label>Valor:</label>
+        <input
+          type="number"
+          name="valor"
+          value={transacao.valor}
+          onChange={handleChange}
+          step="0.01"
+          className="border-slate-300 rounded-sm p-1"
+        />
+      </div>
+      <div className="flex flex-row gap-2 w-full"></div>
+      <button
+        type="submit"
+        className="border-slate-300 bg-slate-200 px-8 py-2 rounded-md p-1"
+      >
+        Salvar
       </button>
-    )}
-  </form>;
+      {transacaoAtual && (
+        <button
+          type="button"
+          className="border-slate-300 bg-slate-200 px-8 py-2 rounded-md p-1"
+          onClick={cancelarEdicao}
+        >
+          Cancelar
+        </button>
+      )}
+    </form>
+  );
 };
