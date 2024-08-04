@@ -26,14 +26,16 @@ function App() {
 
 const cancelaEdicao = () => setTransacaoEditando(null)
 return (
-  <div className="bg-slate-50 p-6 flex gap-4 flex-col">
-    <h1 >Gestão de Gastos</h1>
-    <SaldoAtual transacoes={transacoes} />
-    <FormularioTransacao
-      transacaoAtual={transacaoEditando}
-      salvarTransacao={adicionarOuEditarTransacao}
-      cancelaEdicao={cancelaEdicao}
-    />
+  <div className="bg-slate-50 p-6 flex gap-4 flex-col h-screen overflow-hidden">
+    <h1 className='text-5xl'>Gestão de Gastos</h1>
+    <div className='flex flex-row justify-between items-center'>
+      <SaldoAtual transacoes={transacoes} />
+      <FormularioTransacao
+        transacaoAtual={transacaoEditando}
+        salvarTransacao={adicionarOuEditarTransacao}
+        cancelaEdicao={cancelaEdicao}
+      />
+    </div>
     <ListaTransacoes
       transacoes={transacoes}
       editarTransacao={editarTransacao}

@@ -14,9 +14,9 @@ export const SaldoAtual = ({ transacoes }: SaldoAtualProps) => {
   };
 
   return (
-    <div>
-      <h2>Saldo atual</h2>
-      <p>R$ {calcularSaldo().toFixed(2)}</p>
+    <div className="p-8 bg-slate-300 w-full flex gap-4 flex-col rounded-tl-2xl rounded-bl-2xl">
+      <h2 className="text-xl font-medium">Saldo atual</h2>
+      <p className={'text 3xl ${calcularSaldo() < 0 ? "text-red-600" : "text-green-600"} '}>R$ {calcularSaldo().toFixed(2)}</p>
     </div>
   );
 };

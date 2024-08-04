@@ -55,7 +55,7 @@ export const FormularioTransacao = ({
           name="tipo"
           value={transacao.tipo}
           onChange={handleChange}
-          className="border-slate-300 rounded-sm p-1"
+          className="border-slate-300 rounded-sm p-1 w-full"
         >
           <option value="receita">Receita</option>
           <option value="despesa">Despesa</option>
@@ -68,7 +68,7 @@ export const FormularioTransacao = ({
           name="descricao"
           value={transacao.descricao}
           onChange={handleChange}
-          className="border-slate-300 rounded-sm p-1"
+          className="border-slate-300 rounded-sm p-1 w-full"
         />
       </div>
       <div className="flex flex-row gap-2 items-center">
@@ -79,20 +79,20 @@ export const FormularioTransacao = ({
           value={transacao.valor}
           onChange={handleChange}
           step="0.01"
-          className="border-slate-300 rounded-sm p-1"
+          className="border-slate-300 rounded-sm p-1 w-full"
         />
       </div>
       <div className="flex flex-row gap-2 w-full"></div>
       <button
         type="submit"
-        className="border-slate-300 bg-slate-200 px-8 py-2 rounded-md p-1"
+        className="border-slate-300 bg-slate-200 px-8 py-2 rounded-md p-1 w-full flex-1"
       >
         Salvar
       </button>
       {transacaoAtual && (
         <button
           type="button"
-          className="border-slate-300 bg-slate-200 px-8 py-2 rounded-md p-1"
+          className="border-slate-300 bg-slate-200 px-8 py-2 rounded-md p-1 flex-1"
           onClick={cancelarEdicao}
         >
           Cancelar
