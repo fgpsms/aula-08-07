@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { Transacao } from './assets/types'
+import { SaldoAtual } from './assets/SaldoAtual'
+import { ListaTransacoes } from './assets/ListaTransacoes'
+import { FormularioTransacao } from './assets/FormularioTransacao'
 
 
 function App() {
@@ -24,18 +27,20 @@ function App() {
 
 const cancelaEdicao = () => setTransacaoEditando(null)
 return (
-<>
-<h1>Gestão de Gastos</h1>
-<SaldoAtual transacoes={transacoes}/>
-<FormularioTransacao transacaoAtual={transacaoEditando}
-  salvarTransacao={adicionarOuEditarTransacao}
-  cancelaEdicao={cancelaEdicao} />
-<ListarTransacoes
-transacoes={transacoes}
-editarTransacao={editarTransacao}
-deletarTransacao={deletarTransacao}
-/>
-</>
-)
+  <>
+    <h1>Gestão de Gastos</h1>
+    <SaldoAtual transacoes={transacoes} />
+    <FormularioTransacao
+      transacaoAtual={transacaoEditando}
+      salvarTransacao={adicionarOuEditarTransacao}
+      cancelaEdicao={cancelaEdicao}
+    />
+    <ListaTransacoes
+      transacoes={transacoes}
+      editarTransacao={editarTransacao}
+      deletarTransacao={deletarTransacao}
+    />
+  </>
+);
 }
 export default App

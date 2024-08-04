@@ -1,9 +1,9 @@
 import { Transacao } from "./types";
 
 interface ListarTransacoesProps {
-    transacao: Transacao[];
-    editarTransacao: (transacao: Transacao) => void;
-    deletarTransacao: (id: number) => void;
+  transacoes: Transacao[];
+  editarTransacao: (transacao: Transacao) => void;
+  deletarTransacao: (id: number) => void;
 }
 export const ListaTransacoes = ({transacoes, editarTransacao, deletarTransacao,}: ListarTransacoesProps) => {
 return (<div>
